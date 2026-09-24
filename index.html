@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+    <p id="output"></p>
+    <script src="datatypes.js"></script>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <p id="greeting"></p>
+    <script>
+        const input=document.getElementById("nameInput");
+        const greeting=document.getElementById("greeting");
+        input.addEventListener("input", () => {
+            greeting.innerText="Hello, " + input.value + "!";
+        });
+        </script>
+
+
+        <ul id="taskList"></ul>
+        <li>Sample Task 1</li>
+        <li>Sample Task 2</li>
+        </ul>
+
+        <script>
+            document.getElementById("taskList").addEventListener("click", (e) => {
+                if(e.target.tagName === "LI"){
+                    e.target.remove();
+                }
+            });
+            </script>
+
+            <input type="text" id="taskInput" placeholder="Enter a task">
+            <button id="addTaskBtn">Add Task</button>
+            <ul id="taskList"></ul>
+            <script>
+                document.getElementById("addTaskBtn").addEventListener("click", () => {
+                    const input = document.getElementById("taskInput");
+                    if(input.value.trim() !== ""){
+                        const li = document.createElement("li");
+                        li.innerText = input.value;
+                        document.getElementById("taskList").appendChild(li);
+                        input.value = "";
+                    }
+                });
+            </script>
+            const arr1=[1,2,3,4,5];
+            const arr2=[6,7,8,9,10];
+            const combined=[...arr1,...arr2];
+            console.log(combined);
+            function sumAll(...nums){
+                return nums.reduce((a,b)=>a+b,0);
+            }
+                console.log(sumAll(1,2,3,4,5));
+</body>
+</html>

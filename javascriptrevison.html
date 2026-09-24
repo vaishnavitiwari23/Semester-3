@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>My FIrst Javascript Program</h2>
+    <button onclick="runcode()">Run Code</button>
+    <p id="result"></p>
+
+    <h2>Data Type Example</h2>
+    <button onclick="runcode2()">Run code</button>
+    <p id="result2"></p>
+
+
+
+
+
+    <script>
+        function runcode(){
+            //step1 : store a number in a variable
+            let number1=10;
+            let number2=5;
+
+            //step2: add both numbers
+            let sum = number1+number2;
+
+            //step3: show result on the page
+
+            document.getElementById("result").innerHTML="sum is:" + sum;
+
+        }
+        function runcode2(){
+            let age=10;
+            let name="vineet";
+            let isStudent=true;
+
+            document.getElementById("result2").innerHTML=
+            "age type:"+ typeof age + " | " +
+            "name type:"+ typeof name + " | " +
+            "isStudent type:" + typeof isStudent;
+        }
+    </script>
+      
+
+      <h2>If-Else Example</h2>
+      <button onclick="runcode3()">Run code</button>
+      <p id="result3"></p>
+      <script>
+        function runcode3(){
+            let marks=75;
+            if(marks>=18){
+                document.getElementById("result3").innerText="Grade A";
+            }
+            else if(marks>=60){
+                document.getElementById("result3").innerText="Grade b";
+            }
+
+            else{
+                document.getElementById("result3").innerHTML="Grade C=Needs Improvement";
+            }
+        }
+      </script>
+
+
+<h2>parameter</h2>
+<button onclick="runcode5()">Run code</button>
+      <p id="result4"></p>
+      <script>
+        function runcode5(){
+            function addNumbers(x,y)    {
+                return x+y;
+            }
+            let sum=addNumbers(25,50);
+            document.getElementById("result4").innerText="Sum is: " + sum;
+        }
+      </script>
+      
+<h2>parameter</h2>
+<button onclick="runcode5()">Run code</button>
+      <p id="result4"></p>
+      <script>
+        function runcode5(){
+            function addNumbers(x,y)    {
+                return x+y;
+            }
+            let sum=addNumbers(25,50);
+            document.getElementById("result4").innerText="Sum is: " + sum;
+        }
+      </script>
+
+
+
+<h2>ARRAY </h2>
+<button onclick="runcode6()">Run code</button>
+      <p id="result6"></p>
+      <script>
+        function runcode6(){
+            let students=["Vaishnavi","Priya","Ramesh","Suresh"];
+            let first=students[0];
+            let total=students.length;
+            students.push("Aman");
+            document.getElementById("result6").innerText=
+            "First: " + first +"/" +
+"Total: " + total + "/" +
+"New Student Added: " + students;
+        }
+      </script>
+      
+
+      <h2>Object</h2>
+<button onclick="runcode7()">Run code</button>
+      <p id="result7"></p>
+      <script>
+        function runcode7(){
+            let student={
+                name:"Dara Singh",
+                age:20,
+                marks:80
+            };
+            let studentName=student.name;
+            let studentAge=student.age;
+            student.marks=90;
+            document.getElementById("result7").innerText=
+            "Student Name: " + studentName + "/" + 
+            "Student Age: " + studentAge + "/" +
+            "Student Marks: " + student.marks;
+        }
+      </script>
+
+      <h2>Demo</h2>
+      <button onclick="runcode9()">Run code</button>
+        <p id="demoText">This text will change when you click Run</p>
+
+        <script>
+            function runcode9() {
+                document.getElementById("demoText").innerText = "The text has changed!";
+            }
+        </script>
+
+
+        <h2>Event Example</h2>
+        <button onclick="runcode10()">Run code</button>
+        <button id="clickMeButton">Click Me</button>
+        <script>
+            function runcode10() {
+                document.getElementById("clickMeButton").addEventListener("click", function() {
+                    alert("Button was clicked!");
+                });
+            }
+        </script>
+
+           <h2>Template Literals Example</h2>  
+             <button onclick="runCode8()">Run Code</button>
+                 <p id="result8"></p>   
+                  <script>
+                  function runCode8() {
+                    let name = "Riya";     
+                      let marks = 88;       
+                 let message = `Name: ${name}, Marks: ${marks}`;     
+                 
+               document.getElementById("result8").innerText = message;  
+                  } 
+         </script> 
+        
+
+
+           <h2>Events Example</h2>  
+          <button onclick="setupEvent()">Setup Event (run once)</button>  
+          <button id="clickMeBtn">Click Me!</button>  
+          <script>    
+           function setupEvent() {      
+
+        // addEventListener "listens" for a click and runs a function when it happens   
+           document.getElementById("clickMeBtn").addEventListener("click", function() 
+            {        
+             alert("You clicked the button!");   
+             }); 
+             }   
+             </script> 
+             <h2>Classes Example</h2>
+                 <button onclick="runCode10()">Run Code</button> 
+                    <p id="result10"></p>   
+                     <script>    
+                      function runCode10() {  
+                        // class = blueprint to create similar objects easily       
+                        class Student {         
+                             // constructor runs when a new object is created      
+                                constructor(name, marks) {     
+                                   this.name = name;        
+                                 this.marks = marks;    
+                                   }         
+                             //  // a method (function) inside the class 
+                               showResult() {         
+                                  return this.name + " scored " + this.marks;       
+                                  }       }     
+                                     // creating a new object from the class   
+                                    let student1 = new Student("Karan", 78);       
+                                     // showing result on the page      
+                                      document.getElementById("result10").innerText = student1.showResult();    
+                                       }   
+                                       </script> 
+
+
+
+</body>
+</html>
